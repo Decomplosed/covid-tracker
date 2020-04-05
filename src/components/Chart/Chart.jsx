@@ -4,7 +4,13 @@ import { fetchDailyData } from '../../api'
 const Chart = () => {
   const [dailyData, setDailyData] = useState({})
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const fetchAPI = async () => {
+      setDailyData(await fetchDailyData())
+    }
+
+    fetchAPI()
+  })
 
   return (
     <div>
