@@ -15,14 +15,14 @@ const Chart = () => {
     fetchAPI()
   })
 
-  const lineChart = (
+  const lineChart = dailyData[0] ? (
     <Line
       data={{
         labels: '',
         datasets: [{}, {}],
       }}
     />
-  )
+  ) : null
 
   return (
     <div>
