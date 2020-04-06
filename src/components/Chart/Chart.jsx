@@ -28,17 +28,19 @@ const Chart = () => {
             corderColor: '#3333ff',
             fill: true,
           },
-          {},
+          {
+            data: dailyData(({ deaths }) => deaths),
+            label: 'Deaths',
+            corderColor: 'red',
+            backgroundColor: 'rgba(255, 0, 0, 0.5)',
+            fill: true,
+          },
         ],
       }}
     />
   ) : null
 
-  return (
-    <div>
-      <h1>Chart</h1>
-    </div>
-  )
+  return <div className={styles.container}>{lineChart}</div>
 }
 
 export default Chart
