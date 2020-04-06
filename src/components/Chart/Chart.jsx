@@ -17,7 +17,7 @@ const Chart = () => {
     fetchAPI()
   })
 
-  const lineChart = dailyData[0] ? (
+  const lineChart = dailyData.length ? (
     <Line
       data={{
         labels: dailyData(({ date }) => date),
