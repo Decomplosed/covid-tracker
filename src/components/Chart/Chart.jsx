@@ -12,14 +12,24 @@ const Chart = () => {
       setDailyData(await fetchDailyData())
     }
 
+    console.log(dailyData)
+
     fetchAPI()
   })
 
   const lineChart = dailyData[0] ? (
     <Line
       data={{
-        labels: '',
-        datasets: [{}, {}],
+        labels: dailyData(({ date }) => date),
+        datasets: [
+          {
+            data: dailyData(({ confirmed }) => confirmed),
+            label: 'Infected',
+            corderColor: '#3333ff',
+            fill: true,
+          },
+          {},
+        ],
       }}
     />
   ) : null
