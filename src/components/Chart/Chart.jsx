@@ -15,6 +15,15 @@ const Chart = () => {
     fetchAPI()
   })
 
+  const lineChart = (
+    <Line
+      data={{
+        labels: '',
+        datasets: [{}, {}],
+      }}
+    />
+  )
+
   return (
     <div>
       <h1>Chart</h1>
